@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Dự đoán Iris bằng KNN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">🌸 Dự đoán Loài Hoa Iris</h1>
+        <form method="POST" class="space-y-4">
+            <div>
+                <label class="block text-gray-700 font-medium mb-2">Sepal Length (cm):</label>
+                <input type="number" step="0.1" name="sepal_length" required 
+                       class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+                <label class="block text-gray-700 font-medium mb-2">Sepal Width (cm):</label>
+                <input type="number" step="0.1" name="sepal_width" required 
+                       class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+                <label class="block text-gray-700 font-medium mb-2">Petal Length (cm):</label>
+                <input type="number" step="0.1" name="petal_length" required 
+                       class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+                <label class="block text-gray-700 font-medium mb-2">Petal Width (cm):</label>
+                <input type="number" step="0.1" name="petal_width" required 
+                       class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <button type="submit" 
+                    class="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-200">
+                🔮 Dự đoán
+            </button>
+        </form>
+
+        {% if prediction %}
+        <div class="mt-6">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Kết quả dự đoán:</h2>
+            <div class="bg-gray-50 p-4 rounded-md">
+                <p class="text-lg text-blue-600 font-medium">🌸 Loài hoa: <b>{{ prediction }}</b></p>
+
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
